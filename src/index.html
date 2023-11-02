@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tetris Game</title>
   <link rel="stylesheet" href="./assets/styles/main.css">
-  <link rel="icon" href="./assets/favicon/favicon.ico">
+  <link rel="icon" href="./assets/favicon/favicon.png">
 </head>
 
 <body>
@@ -14,10 +14,37 @@
     <h1 class="title">Tetris Game</h1>
   </header>
   <main class="main">
-    <section class="tetris-container">
-
+    <section class="control-container">
+      <div class="content-next">
+        <span class="next-title">NEXT</span>
+        <div class="next-inner">
+          <div class="tetromino">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="content-score">
+        <span class="score-title">SCORE</span>
+        <span class="score-total">0</span>
+      </div>
+      <div class="game-buttons">
+        <button class="sketch-button start">START</button>
+        <button class="sketch-button pause">PAUSE</button>
+        <button class="sketch-button restart">RESTART</button>
+      </div>
     </section>
-
+    <section class="tetris-container">
+      <canvas width="250" height="500" id="game" class="canvas-bg ">
+      </canvas>
+    </section>
+    <div class="popup">
+      <div class="popup-content">
+        <h1>GAME OVER!</h1>
+      </div>
+    </div>
   </main>
   <script type="module" src="/js/main.js"></script>
 </body>

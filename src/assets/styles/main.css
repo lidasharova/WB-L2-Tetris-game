@@ -1,23 +1,174 @@
-body {
-  min-width: 280px;
-  min-height: 100vh;
-  font-family: 'Arial', sans-serif;
-  background-color: #383636;
-}
+@import url('./sketchBtn.css');
+@import url('./tetromino.css');
 
-.header {
-  width: 100%;
-  height: 10vh;
-  padding: 20px;
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  margin: 0;
+  height: 100vh;
 }
 
 .main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .title {
+  margin: 0;
+  padding-bottom: 60px;
+  padding-top: 50px;
+  font-size: 40px;
   text-align: center;
-  font-size: 27px;
-  color: rgb(95, 179, 227);
-  text-shadow: 2px 2px 4px rgb(113, 113, 226);
+  color: #334b9f;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+}
+
+.canvas-bg {
+  background-color: rgba(0, 0, 0, 0.637);
+  width: 280px;
+  color: rgb(242, 82, 54);
+}
+
+canvas {
+  width: 250px;
+  height: 500px;
+  margin-left: 50px;
+}
+
+canvas,
+.content-next,
+.content-score {
+  animation: pulsate 1.5s infinite alternate;
+  border: 1px solid #150c0c;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #13bbfe,
+    0 0 0.8rem #13bbfe, 0 0 2.8rem #13bbfe, inset 0 0 1.3rem #13bbfe;
+}
+
+.content-next {
+  position: relative;
+  width: 150px;
+  height: 180px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 15px;
+}
+
+.next-title {
+  position: absolute;
+  top: 10px;
+  left: 55px;
+  display: block;
+  width: 100%;
+  color: #0d151b;
+}
+
+.next-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content-score {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 15px;
+  height: 100px;
+  text-align: center;
+  padding-top: 10px;
+  color: #fff;
+}
+
+.content-score span {
+  display: block;
+}
+
+.score-title {
+  margin-bottom: 10px;
+  color: #0d151b;
+}
+
+.score-total {
+  font-size: 20px;
+}
+
+.game-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.game-buttons button {
+  border: 1px solid gray;
+}
+
+.game-controls {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-controls button {
+  border: 1px solid gray;
+}
+
+.bottom {
+  transform: rotate(180deg);
+  margin-bottom: 0;
+}
+
+.left {
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+.right {
+  transform: rotate(90deg);
+  position: absolute;
+  top: 35px;
+  right: 0;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background: rgba(255, 254, 254, 0.763);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #13bbfe,
+      0 0 80px #13bbfe, 0 0 90px #13bbfe, 0 0 100px #13bbfe, 0 0 150px #13bbfe;
+  }
+
+  0% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #13bbfe,
+      0 0 45px #13bbfe, 0 0 55px #13bbfe, 0 0 70px #13bbfe, 0 0 80px #13bbfe;
+  }
 }
